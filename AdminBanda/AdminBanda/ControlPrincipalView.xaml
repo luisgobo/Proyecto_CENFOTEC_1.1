@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdminBanda.ControlPrincipalView"
+             BackgroundColor="{StaticResource ColorFondo}">
+    <ContentView.Content>
+        <StackLayout>
+            <Button x:Name="botonAgregar" Text="Agregar">
+                <Button.BackgroundColor>
+                    <OnPlatform x:TypeArguments="Color"
+                                iOS="Blue" Android="Green" />
+                </Button.BackgroundColor>
+            </Button>
+
+            <ActivityIndicator IsVisible="{Binding IsBusy}"
+                               IsRunning="{Binding IsBusy}" 
+                               />
+            <ListView x:Name="listadoDatos"
+                      IsPullToRefreshEnabled="True"
+                      IsRefreshing="{Binding IsBusy}"
+                      RefreshCommand="{Binding RefrescarCommand}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="icon" />
+                                <Label Text="{Binding Nombre}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

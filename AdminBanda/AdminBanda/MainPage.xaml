@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AdminBanda"
+             x:Class="AdminBanda.MainPage">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Vertical"
+                  VerticalOptions="Start" 
+                  HorizontalOptions="Center">
+                    <Entry Text="Welcome to Xamarin.Forms!" 
+                            Margin="10" FontSize="10" />
+
+                    <DatePicker x:Name="DatePickerFechaNacimiento" />
+                    <Button x:Name="Boton1" Text="Haga click">
+                    </Button>
+                    <Button x:Name="boton2" Text="Mostrar" />
+
+                </StackLayout>
+
+                <Label x:Name="LabelSalida" />
+            </StackLayout>
+
+        </ScrollView>
+
+    </ContentPage.Content>
+
+</ContentPage>
